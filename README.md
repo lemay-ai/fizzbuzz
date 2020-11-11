@@ -4,7 +4,7 @@ Hello, human.
 
 Your goal is to demonstrate your ninja coding skills by writing a producer-consumer demo dashboard using Docker, python3, and a bit of magic.
 
-Please fork this repo and then do the following:
+Please fork this repo (you may opt to share a private repo with us to preserve your privacy) and then do the following:
 
 - Create a branch in your forked repo
 - Create containers to model a producer-consumer pattern: (1) a producer in python that generates 10 POST requests within 100 ms, once per second at the start of the second, and (2) a consumer in python that receives the requests and stores the requests and their arrival time. The POST payload will be the message number, counting up from 0, and the transmission time recorded on the side of the producer container. (3) Put a queue between the producer and the consumer (e.g. https://python-rq.org/).
