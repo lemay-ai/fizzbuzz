@@ -1,10 +1,35 @@
 <html>
     <head>
         <title>{{ title }} - Microblog</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
     <body>
         <h1>Hello, {{ user.msg }}!</h1>
-        <h2>The max message #: {{ max_msg }}</h2>
-        <h3>The averga time of the calls for the last 10 seconds is {{avg_time}} milliseconds</h3>
+        <h2 id = "msg_num">The max message #: {{ max_msg }}</h2>
+        <h3 id = "time">The averga time of the calls for the last 10 seconds is {{avg_time}} milliseconds</h3>
     </body>
+    <script>
+        $(document).ready(function(){
+            $(function() {
+                setInterval(function() {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/calculate_result',
+                        dataType : "json",
+                        success: (res) => {
+                            $('#msg_num').html(res.msg_num);
+                            $('#time').html(res.avg_time);
+                        },
+                        error: (e) => {
+                            console.log(e);
+                        }
+                    })   
+                    $.getJSON( '/calculate_result', function( data ) { 
+                        console.log(data); 
+                        });
+                }, 1000);
+            });
+        });
+     </script>
+    
 </html>
