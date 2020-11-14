@@ -13,21 +13,26 @@ from sqlalchemy import func, desc
 @app.route('/index')
 def index():
     user = {'msg': 'dcshapiro!'}
-    max_msg = db.session.query(func.max(Msg.msg_num)).scalar()
-    avg_time = db.session.query(Msg).filter(Msg.timestamp >= datetime.datetime.now() - datetime.timedelta(seconds=10))\
-        .with_entities(func.avg(Msg.time))\
-        .scalar()
+    max_msg, avg_time = data_get()
 
-    return render_template('index.html', title='Home', user=user, max_msg = max_msg, avg_time = round(avg_time, 2))
+    if max_msg and avg_time:
+        return render_template('index.html', title='Home', user=user, max_msg = max_msg, avg_time = round(avg_time, 2))
+    else:
+        return render_template('index.html', title='Home', user=user, max_msg = max_msg, avg_time = avg_time)
 
+
+##Route for updating the msg # and avg time of the last call within past 10 seconds
 @app.route('/calculate_result', methods = ["GET"])
 def calculate_result():
-    max_msg = db.session.query(func.max(Msg.msg_num)).scalar()
-    avg_time = db.session.query(Msg).filter(Msg.timestamp >= datetime.datetime.now() - datetime.timedelta(seconds=10))\
-        .with_entities(func.avg(Msg.time))\
-        .scalar()
-    res = jsonify({"msg_num" : "The max message #: {}".format(max_msg), "avg_time" : "The averga time of the calls for the last 10 seconds is {} milliseconds".format(round(avg_time, 2))})
-    return res
+    max_msg, avg_time = data_get()
+    if max_msg and avg_time:
+        res = jsonify({
+            "msg_num" : "The max message #: {}".format(max_msg), 
+            "avg_time" : "The averga time of the calls for the last 10 seconds is {} milliseconds".format(round(avg_time, 2))
+            })
+        return res
+    else:
+        return ("", 500)
 
 
 ## The consumer routes
