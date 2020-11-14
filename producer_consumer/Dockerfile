@@ -20,7 +20,6 @@ ENV FLASK_ENV development
 RUN chown -R model:model ./
 USER model
 
-# ENTRYPOINT ["./boot.sh"]
 
 
 
