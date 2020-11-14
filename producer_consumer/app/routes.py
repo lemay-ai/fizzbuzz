@@ -6,6 +6,8 @@ import datetime
 import json
 from flask import render_template, request, jsonify, url_for, make_response
 from sqlalchemy import func, desc
+from redis import Redis
+from rq import Queue
 
 
 

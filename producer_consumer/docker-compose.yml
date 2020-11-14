@@ -8,25 +8,24 @@ services:
       - "6379:6379"
     command: redis-server
 
-  # worker:
-  #   image: jaredv/rq-docker:0.0.2 
-  #   depends_on:
-  #     - redis
-  #   command: rqworker --name msg_tasks --url redis://redis:6379/0
-
-  worker:
+  worker6:
+    image: master-image
     depends_on:
       - redis
-      - model404
-    command: rq worker msg_tasks --url redis://redis:6379/0
+    entrypoint: venv/bin/rq worker msg_tasks --url redis://redis:6379/0
 
-
-  model405:
+  model423:
     build: .
+    image: master-image
     ports:
      - "5000:5000"
     environment:
       - REDIS_URL=redis://redis:6379/0
     depends_on:
       - redis
+    entrypoint: ["./boot.sh"]
+
+
+
+
 

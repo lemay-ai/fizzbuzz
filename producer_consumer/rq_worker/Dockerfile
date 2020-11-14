@@ -14,13 +14,11 @@ COPY migrations migrations
 COPY model.py config.py boot.sh ./
 RUN chmod +x boot.sh
 
-ENV FLASK_APP model.py
-ENV FLASK_ENV development
 
 RUN chown -R model:model ./
 USER model
 
-# ENTRYPOINT ["./boot.sh"]
+ENTRYPOINT ["./boot.sh"]
 
 
 

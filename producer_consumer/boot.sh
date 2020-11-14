@@ -1,5 +1,6 @@
 #!/bin/sh
 while true; do
+    source venv/bin/activate
     flask db init
     flask db migrate -m "intialize db"
     flask db upgrade
