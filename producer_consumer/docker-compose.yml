@@ -8,22 +8,44 @@ services:
       - "6379:6379"
     command: redis-server
 
-  worker6:
-    image: master-image
+  consumer405:
+    build: .
+    image: main
+    ports:
+     - "5000:5000"
+    links:
+       - "mysql:mysql"
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      DB_HOST: mysql
+      DB_NAME: model
+      DB_USER: model
+      DB_PASSWORD: slimdingo85
+    depends_on:
+      - redis
+      - mysql
+    entrypoint: ["./boot.sh"]
+
+  rq_worker400:
+    image: main:latest
     depends_on:
       - redis
     entrypoint: venv/bin/rq worker msg_tasks --url redis://redis:6379/0
 
-  model423:
-    build: .
-    image: master-image
-    ports:
-     - "5000:5000"
+  mysql:
+    image: mysql/mysql-server:5.7
+    volumes:
+      - mysql-data:/var/lib/mysql
     environment:
-      - REDIS_URL=redis://redis:6379/0
-    depends_on:
-      - redis
-    entrypoint: ["./boot.sh"]
+      MYSQL_ROOT_PASSWORD: slimdingo85
+      MYSQL_DATABASE: model
+      MYSQL_USER: model
+      MYSQL_PASSWORD: slimdingo85
+
+volumes:
+    mysql-data:
+
+
 
 
 

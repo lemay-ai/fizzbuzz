@@ -6,7 +6,6 @@ import requests as reqs
 from sqlalchemy import func
 from functools import wraps
 
-##export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 def my_timer(orig_func):
     import time
@@ -36,7 +35,6 @@ def data_get():
 def db_insert(data, arrival_time):
     try:
         msg = json.loads(data)["msg_num"]
-        print(msg)
         delivery_time = arrival_time - datetime.datetime.strptime(json.loads(data)["start"], '%Y-%m-%d %H:%M:%S.%f')
         delivery_time = float(delivery_time.microseconds / 1000)
         msg = Msg(msg_num = msg, time = delivery_time)
