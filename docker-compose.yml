@@ -8,8 +8,14 @@ services:
       vpcbr:
         ipv4_address: 10.5.0.2
 
-  db:
+  mongodb:
     image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: flaskdb
+      MONGODB_DATA_DIR: /data/db
+      MONDODB_LOG_DIR: /dev/null
+    volumes:
+      - mongodbdata:/data/db
     ports:
       - "27017-27019:27017-27019"
     networks:
@@ -37,6 +43,12 @@ services:
     volumes:
       - .:/receiver
     environment:
+    environment:
+      APP_ENV: "prod"
+      APP_DEBUG: "False"
+      APP_PORT: 5000
+      MONGODB_DATABASE: flaskdb
+      MONGODB_HOSTNAME: mongodb
       FLASK_ENV: development
     networks:
       vpcbr:
@@ -62,3 +74,7 @@ networks:
     ipam:
      config:
        - subnet: 10.5.0.0/16
+
+volumes:
+  mongodbdata:
+    driver: local
