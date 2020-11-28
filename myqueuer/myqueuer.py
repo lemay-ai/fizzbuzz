@@ -8,8 +8,8 @@ import time
 import ast
 
 app = Flask(__name__)
-cache = redis.Redis(host='redis', port=6379)
-q = Queue(connection=Redis())
+#cache = redis.Redis(host='http://10.5.0.2', port=6379)
+q = Queue(connection=Redis(host='redis', port=6379))
 
 '''def get_hit_count():
     retries = 5
@@ -26,11 +26,13 @@ q = Queue(connection=Redis())
 '''
 @app.route('/', methods=['POST','GET'])
 def hello():
-    result = request.data #q.enqueue(request.form)
+    result = request.data #
+    #job=q.enqueue(str(request.data, 'utf-8'))
     result=str(result, 'utf-8')
+    #result=job.return_value
     result=ast.literal_eval(result)
     #received_time=time()*1000
-    post('http://10.5.0.5/',data = str(result))#job=queue.enqueue(post('http://172.18.0.2/',data = data))
+    job=q.enqueue(post('http://10.5.0.5/',data = str(result)).text)#job=queue.enqueue(post('http://172.18.0.2/',data = data))
     print('relay')
     return str(result)
 
