@@ -2,10 +2,10 @@
 
 Hello, other humans.
 
-I have tried uploaded a solution to the task below. the ipynb of interest is Ned_fizzbuzz.ipynb, and if you have docker and docker-compose installed you can run the solution from a linux terminal by running 
-'''
+I have tried uploaded a solution to the task below. the ipynb of interest is Ned_fizzbuzz.ipynb, and if you have docker and docker-compose installed you can run the solution from a linux terminal by running:
+```
 sudo ./ned_fizzbuzz
-'''
+```
 
 You can access the flask page it creastes on your local host (port 80 if necessary)
 
