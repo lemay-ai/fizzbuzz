@@ -1,0 +1,7 @@
+requests
+psycopg2-binary>=2.8
+rq
+pandas
+Flask
+Flask-SocketIO
+psycopg2
