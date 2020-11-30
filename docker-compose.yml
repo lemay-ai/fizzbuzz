@@ -1,0 +1,66 @@
+version: "3.8"
+   
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"  
+
+  consumer:
+    build: ./consumer
+    command: python3 consumer.py 8001
+    volumes:
+      - ./consumer:/code
+    ports:
+      - "8001:8001"
+    expose:
+      - "8001"
+    depends_on:
+      - db
+
+  redis:
+    image: redis #/etc/init.d/redis-server stop
+    ports:
+      - "6379:6379"
+
+  producer:
+    build: ./producer
+    command: python3 producer.py
+    volumes:
+      - ./producer:/code
+    depends_on:
+      - redis
+      - consumer
+  
+  web:
+    build: ./webapp
+    volumes:
+      - ./webapp:/app
+
+    command: python3 application.py
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+    depends_on:
+      - db
+      - consumer
+      - producer
+  fizzbuzz_notebook:
+      image:    jupyter/minimal-notebook
+      volumes:
+        - ./notebooks:/home/jovyan/work
+      ports:
+        - 8888:8888
+      command: bash -c "pip3 install -r /home/jovyan/work/requirements.txt && jupyter notebook --port=8888 --no-browser --ip=0.0.0.0 --allow-root"
+      depends_on:
+        - db
+        - consumer
+        - producer
+        - web

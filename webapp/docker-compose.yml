@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./
+    volumes:
+      - .:/app
+      # - ./static/js:/app/static/js
+      # - ./templates:/app/templates
+
+    command: python3 application.py
+    ports:
+      - "5000:5000"
+    expose:
+      - "5000"
+    depends_on: 
+      - db
+    # entrypoint:
+    #   - flask
+    #   - run
+    #   - --host=0.0.0.0
