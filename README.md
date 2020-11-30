@@ -1,20 +1,43 @@
 # fizzbuzz
 
-Hello, human.
+This repo demonstrates the consumer-producer behavior with POST requests. A dashboard and jupyter notebook is made available for introspection. Further redis queue that enques responses from producer and consumer. Repo was tested on ubuntu 18.04 and Docker version 19.03.1
 
-Your goal is to demonstrate your ninja coding skills by writing a producer-consumer demo dashboard using Docker, python3, and a bit of magic.
+#### How to run
 
-Please fork this repo (you may opt to share a private repo with us to preserve your privacy) and then do the following:
+clone the repo by
+```
+git clone git@github.com:ratmcu/fizzbuzz.git
+```
 
-- Create a branch in your forked repo
-- Create containers to model a producer-consumer pattern: (1) a producer in python that generates 10 POST requests within 100 ms, once per second at the start of the second, and (2) a consumer in python that receives the requests and stores the requests and their arrival time. The POST payload will be the message number, counting up from 0, and the transmission time recorded on the side of the producer container. (3) Put a queue between the producer and the consumer (e.g. https://python-rq.org/).
-- Show in an ipynb notebook that:
- - The API of the consumer is receiving POST requests.
- - The consumer container is storing the received POST requests in a database (e.g. SQL, Elasticsearch, MongoDB, etc).
-- Create a page that can be reached on localhost, which shows the highest number in the consumer database so far, and the average transmission time of messages received in the past 10 seconds (time arrived minus time sent is the time to transmit). Design the page so that it updates as the numbers are added to the database. Updates every second will probably look nicer than super super fast page updates. Use your own judgement to decide how to make the page.
-- Wrap the producer, consumer, and queue into a docker container that uses the containers above. If your database is containerized, or you used nginx or something, there may be more containers in the mix, and that's totally fine. docker-compose would be nice to see.
-- Write a script to launch the example
-- Create a pull request and you can approve it yourself and merge the branch into trunk
-- Document the process for using your updated repo in README.md so that we can try out your demo ourselves
+might need to switch to the master by
 
-Please spend minimal effort on graphics and UI, as this is not a test of your UI coding skills. If you use a web framework like Laravel that's totally cool. Just don't stress on frontend stuff.
+```
+git pull origin master
+```
+
+then run docker-compose, docker-compose can be installed via [Install Docker Compose](https://docs.docker.com/compose/install/)
+
+```
+cd fizzbuzz
+docker-compose up
+```
+
+everything should be up consumer, producer, redis, postgress db, web app and the notebook.
+
+#### Introspections
+
+To visit the note book use the url printed at the end. url should be visible in the following format
+
+```
+http://127.0.0.1:8888/?token=b6cea60db05fb9911007ccf892731488a471fa629cf528cd
+```
+notebook to query the system's psql database can be found inside "work" directory 
+
+web app that updates the system statistics can be reached via [http://localhost:5000/](http://localhost:5000/)
+
+redis queue can be executed with the following command
+
+```
+rq worker -u redis://localhost:6379 fizzbuzzqueue --burst
+```
+
