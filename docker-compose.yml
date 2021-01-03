@@ -1,0 +1,50 @@
+version: "3"
+services:
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+  
+  mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: flaskdb
+      MONGODB_DATA_DIR: /data/db
+      MONDODB_LOG_DIR: /dev/null
+    volumes:
+      - mongodbdata:/data/db
+    ports:
+      - "27017:27017"
+
+  consumer:
+    build: ./consumer
+    command: python3 app.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/consumer
+    environment:
+    environment:
+      APP_ENV: "prod"
+      APP_DEBUG: "False"
+      APP_PORT: 5000
+      MONGODB_DATABASE: flaskdb
+      MONGODB_HOSTNAME: mongodb
+      FLASK_ENV: development
+    depends_on:
+      - producer
+      - mongodb
+
+  producer:
+    build: ./producer
+    command: rq worker --url redis://redis:6379
+    volumes:
+      - .:/producer
+    environment:
+      FLASK_ENV: development
+    depends_on:
+      - redis
+  
+volumes:
+  mongodbdata:
+    driver: local

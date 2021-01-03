@@ -1,0 +1,5 @@
+Flask
+redis
+rq
+flask_pymongo
+requests
