@@ -2,6 +2,7 @@ version: "3"
 services:
   redis:
     image: "redis:alpine"
+    command: redis-server
     ports:
       - "6379:6379"
   
@@ -18,12 +19,10 @@ services:
 
   consumer:
     build: ./consumer
-    command: python3 app.py
     ports:
       - "5000:5000"
     volumes:
       - .:/consumer
-    environment:
     environment:
       APP_ENV: "prod"
       APP_DEBUG: "False"
@@ -32,17 +31,17 @@ services:
       MONGODB_HOSTNAME: mongodb
       FLASK_ENV: development
     depends_on:
-      - producer
       - mongodb
 
   producer:
     build: ./producer
-    command: rq worker --url redis://redis:6379
+    command: python3 myqueue.py
     volumes:
       - .:/producer
     environment:
       FLASK_ENV: development
     depends_on:
+      - consumer
       - redis
   
 volumes:

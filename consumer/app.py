@@ -10,7 +10,7 @@ import requests
 #import myqueue
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
+app.config["MONGO_URI"] = "mongodb://mongodb:27017/myDatabase"
 mongo = PyMongo(app)
 
 @app.route("/", methods=['GET','POST'])
@@ -18,7 +18,7 @@ def hello():
 
 	try:
 
-		producer.enqueue()
+		#producer.enqueue()
 		receive_data=request.data.decode('UTF-8')
 		print(receive_data)
 		receive_data=ast.literal_eval(receive_data)
