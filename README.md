@@ -2,7 +2,7 @@
 
 Hello, human.
 
-Your goal is to demonstrate your ninja coding skills by writing an ML API demo using Docker, python3, and a bit of magic. Please spend minimal effort on graphics and UI, as this is not a test of your UI coding skills. Just don't stress on frontend stuff. 
+Your goal is to demonstrate your ninja coding skills by creating a video recording of your answers to some general knowledge questions, writing an ML API demo using Docker, python3, and a bit of magic, and showing us your exploratory data analysis skills. Please spend minimal effort on graphics and UI, as this is not a test of your UI coding skills. Just don't stress on frontend stuff.
 
 # GENERAL KNOWLEDGE
 
