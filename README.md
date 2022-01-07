@@ -6,7 +6,7 @@ Your goal is to demonstrate your ninja coding skills by writing an ML API demo u
 
 # GENERAL KNOWLEDGE
 
-- Please make a video recording of your answers to the questions in the notebook: 
+- Please make a video recording of your answers to the questions in the notebook: https://github.com/lemay-ai/fizzbuzz/blob/main/Interview_Questions.ipynb
 - Please share the video file with daniel@lemay.ai and matt@lemay.ai
 
 # MODEL DEPLOYMENT
