@@ -4,9 +4,10 @@ Hello, human.
 
 Your goal is to demonstrate your ninja coding skills by writing an ML API demo using Docker, python3, and a bit of magic. Please spend minimal effort on graphics and UI, as this is not a test of your UI coding skills. Just don't stress on frontend stuff. 
 
-# General Knowledge
+# GENERAL KNOWLEDGE
 
-
+- Please make a video recording of your answers to the questions in the notebook: 
+- Please share the video file with daniel@lemay.ai and matt@lemay.ai
 
 # MODEL DEPLOYMENT
 Please fork this repo (you may opt to share a private repo with us to preserve your privacy) and then do the following:
