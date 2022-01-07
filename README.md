@@ -2,7 +2,7 @@
 
 Hello, human.
 
-Your goal is to demonstrate your ninja coding skills by writing an ML API demo using Docker, python3, and a bit of magic. Please spend minimal effort on graphics and UI, as this is not a test of your UI coding skills. If you use a web framework like Laravel that's totally cool. Just don't stress on frontend stuff. 
+Your goal is to demonstrate your ninja coding skills by writing an ML API demo using Docker, python3, and a bit of magic. Please spend minimal effort on graphics and UI, as this is not a test of your UI coding skills. Just don't stress on frontend stuff. 
 
 Please fork this repo (you may opt to share a private repo with us to preserve your privacy) and then do the following:
 - Create a branch in your forked repo
