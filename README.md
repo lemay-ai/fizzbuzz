@@ -4,12 +4,12 @@ Hello, human.
 
 Your goal is to demonstrate your coding skills by creating a video recording of your answers to some general knowledge questions, writing an ML API demo using Docker, python3, and a bit of magic, and showing us your exploratory data analysis skills. Please spend minimal effort on graphics and UI, as this is not a test of your UI coding skills. Just don't stress on frontend stuff.
 
-# GENERAL KNOWLEDGE
+# 1) GENERAL KNOWLEDGE VIDEO DEMONSTRATION
 
 - Please make a video recording of your answers to the questions in the notebook: https://github.com/lemay-ai/fizzbuzz/blob/main/Interview_Questions.ipynb
 - Please share the video file with daniel@lemay.ai and matt@lemay.ai
 
-# MODEL DEPLOYMENT
+# 2) MODEL DEPLOYMENT DEMONSTRATION
 Please fork this repo (you may opt to share a private repo with us to preserve your privacy) and then do the following:
 - Create a branch in your forked repo
 - Create a container to process inference requests from any pretrained model in the huggingface model hub: https://huggingface.co/models
@@ -17,7 +17,7 @@ Please fork this repo (you may opt to share a private repo with us to preserve y
 - Create a notebook to demonstrate requests that POST to the container endpoint and print out the response
 - Please explain why you have chosen this model as your demonstration
 
-# EXPLORATORY DATA ANALYSIS
+# 3) EXPLORATORY DATA ANALYSIS DEMONSTRATION
 - Perform exploratory data analysis on any dataset in the huggingface datasets hub: https://huggingface.co/datasets
 - Include a notebook that contains your analysis within the repository
 - Please explain why you have chosen this dataset for your demonstration of exploratory data analysis
