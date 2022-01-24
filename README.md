@@ -38,5 +38,5 @@ Please fork this repo (you may opt to share a private repo with us to preserve y
 
 
 
-# Update: I have created 2 branches, each for each task. All of them have been merged in main at the end.
+# Update: I have created 2 branches, each for each task. All of them have been merged into the main branch at the end.
 
