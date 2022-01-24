@@ -38,5 +38,5 @@ Please fork this repo (you may opt to share a private repo with us to preserve y
 
 
 
-# Update: pull and merge dev into master
+# Update: I have created 2 branches, each for each task. All of them has been merged in main at the end.
 
