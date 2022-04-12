@@ -8,7 +8,7 @@ Your goal is to demonstrate your coding skills by creating a video recording of 
 
 - Please make a video recording of your answers to the questions in the notebook: https://github.com/lemay-ai/fizzbuzz/blob/main/Interview_Questions.ipynb
 - Please share the video file with daniel@lemay.ai and matt@lemay.ai
-- After you submit the video, please wait for a response confirming that you should proceed to steps 2 and 3, below.
+- After you submit the video, proceed to steps 2 and 3, below.
 
 # 2) MODEL DEPLOYMENT DEMONSTRATION
 Please fork this repo (you may opt to share a private repo with us to preserve your privacy) and then do the following:
