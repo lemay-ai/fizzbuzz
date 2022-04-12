@@ -27,3 +27,8 @@ Please fork this repo (you may opt to share a private repo with us to preserve y
 - Create a pull request and you can approve it yourself and merge the branch into trunk
 - Document the process for using your updated repo in README.md so that we can try out your demo ourselves
 - Share the repo with the github users dcshapiro and elmathioso
+
+
+# By running each cell in the EDA_analysis.ipynb, you can see the results. Dataset is provided in zip files
+
+# Created 2 branches and merged them into main as a final step
