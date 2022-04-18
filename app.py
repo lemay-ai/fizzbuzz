@@ -1,12 +1,26 @@
+
+import pickle
+from fastapi import FastAPI
 from transformers import pipeline
-classifier = pipeline('sentiment-analysis')
+import uvicorn
 
-print("Lets check your tweets \n")
-state = str(input("Enter any tweet: \t"))
+app = FastAPI()
 
-while state:
-    print(state, "\t",classifier(state), "\n")
-    print("Enter another tweet or leave blank to exit\n\n")
-    state = str(input("Enter any tweet: \t"))
+pickle.dump(pipeline('sentiment-analysis'), open('./model/model.pkl', 'wb'))
+classifier = pickle.load(open('./model/model.pkl', 'rb'))
 
-print("exiting the program")
+@app.get("/")
+async def read_root():
+    return {"text": "tweet Sentiment analysis"}
+
+
+@app.post("/state_analysis/{text}")
+async def state_analysis(text):
+    # Get values from browser
+    #classifier = pipeline('sentiment-analysis')
+
+    return classifier(text)
+
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='0.0.0.0', port=80)

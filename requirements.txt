@@ -1,0 +1,5 @@
+fastapi~=0.75.1
+uvicorn~=0.17.6
+locust==2.8.6
+jupyter
+torch
