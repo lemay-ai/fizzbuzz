@@ -13,10 +13,10 @@
 
 <body>
  <div class="login">
-	<h1>Flower Class Prediction</h1>
+	<h1>Class Prediction</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
+    <form action="{{ url_for('front_predict')}}"method="post">
     <input type="text" name="text" placeholder="Text" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
