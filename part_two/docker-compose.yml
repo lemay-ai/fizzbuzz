@@ -1,0 +1,19 @@
+version: "3.10"
+
+services:
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "10080:80"
+
+  model:
+    build: ./model
+    container_name: model
+    restart: always
+    environment:
+      - APP_NAME=BaekBot
+    expose:
+      - 5000
