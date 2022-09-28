@@ -12,7 +12,7 @@ Please follow the instructions for each task.
 
 Execution:
 
-- Direct to folder MDD/app and open jupyter notebook "image_classification.ipynb".
+- Direct to folder /MDD and open jupyter notebook "image_classification.ipynb".
 - Make sure your Linux-64 supports docker, docker-compose, and curl command.
 - Check the terminal path from your application(e.g., jupyter notebook, vscode) to make sure your
   working directory is /MDD
