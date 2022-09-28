@@ -1,0 +1,8 @@
+transformers
+torch
+datasets 
+Pillow
+matplotlib
+Flask
+flask-restful
+gunicorn
