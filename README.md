@@ -28,4 +28,4 @@ Execution:
   Each cell contains the info/explanation of the code cell.
 - This is an object detection dataset in which 5 different classes are supported (Coverall (0),Face_Shield (1),Gloves (2),Goggles (3) and Mask (4)).
 - Since pandemic, datasets regarding medical personal protective equipments become popular.
-  Moreover, this dataset uses real world image and having deeper information could have some real impact.
+  Moreover, this dataset uses real world images in which having deeper information on that could bring some real impacts.
