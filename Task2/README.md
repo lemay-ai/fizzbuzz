@@ -3,7 +3,11 @@ Steps for the Demo
 - Clone the repository to your local machine
 - Start Docker Desktop or Docker service in your local system
 - In the terminal/powershell navigate to the folder /fizzbuzz/Assignment
-- Run the command  "docker-compose up -d --build --scale ml-app=3" (3 Replicas will be created for load balancing using NGINX)
+- Run the command  
+```
+docker-compose up -d --build --scale ml-app=3
+```
+ (3 Replicas will be created for load balancing using NGINX)
 - Run the command "docker ps" to check if the containers are running
 - Connect to "http://localhost:5000" via browser or postman or curl to check if API is running fine. "Machine Learning Inference" response will be received if the API is running.
 - Navigate to the folder /fizzbuzz/Assignment/test
