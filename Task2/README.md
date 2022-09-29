@@ -8,7 +8,11 @@ Steps for the Demo
 docker-compose up -d --build --scale ml-app=3
 ```
  (3 Replicas will be created for load balancing using NGINX)
-- Run the command "docker ps" to check if the containers are running
+- Run the command to check if the containers are running
+```
+docker ps
+```
+
 - Connect to "http://localhost:5000" via browser or postman or curl to check if API is running fine. "Machine Learning Inference" response will be received if the API is running.
 - Navigate to the folder /fizzbuzz/Assignment/test
 - Run the cells of test.ipynb file to send a POST request to the API and receive a prediction
