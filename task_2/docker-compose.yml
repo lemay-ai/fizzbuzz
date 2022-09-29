@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+
+  flask_app:
+    build: ./flask_app
+    container_name: trained-model
+    restart: always
+    volumes:
+      - ./:/flask_app
+    expose:
+      - "5000"
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "5000:80"
+
+
+
+  
