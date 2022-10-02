@@ -17,6 +17,26 @@ Please fork this repo (you may opt to share a private repo with us to preserve y
 - Create a notebook to demonstrate requests that POST to the container endpoint and print out the response
 - Please explain why you have chosen this model as your demonstration
 
+Solution:
+1. Model / container / web server /web server application selection:
+    - As the purpose of this task was to demonstrate model deployment so to focus more in it ,I have selected a model that I have worked in my previous projects. Image classsification model from microsoft i.e (ResNet-50 v1.5 https://huggingface.co/microsoft/resnet-50) which is pretrained on ImageNEt-1k dataset and can classify 1000 classes. 
+    - Used Starlette and unicorn for developing the ASGI based web application.
+    - Used Nginx as the web server that can recieve the request form the internet and forward it to the unicorn acting as a reverse proxy.
+    - The application was containerised using docker container.
+2. How to execute / demo:
+    - Make sure you have git and docker installed in your local system 
+    - First clone the repository in you local machine using git
+    - Open terminal and change the directory to fizbuzz/task_2 and type the following docker commmand
+    ```
+    docker-compose up 
+    ```
+    - Once the docker build is done you can connect to the application on this url " http://localhost:5000" 
+    - To connect it through a browser then go to above url. There will be two options i.e to select the image from your local machine and upload option to get the classification result.
+    - User can also do post request (containing image file object) at this url  " http://localhost:5000/predict"
+        - To test the above post request user can navigate to folder /fizzbuzz/task_2/web_app/api_testing and open jupyter notebook "test.ipynb" and execute the cells.
+    
+
+
 # 3) EXPLORATORY DATA ANALYSIS DEMONSTRATION
 - Perform exploratory data analysis on any dataset in the huggingface datasets hub: https://huggingface.co/datasets
 - Include a notebook that contains your analysis within the repository
