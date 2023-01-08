@@ -1,5 +1,10 @@
+"""
+This is the api server application to start our inference application
+"""
+
 from flask import Flask, Blueprint
 from flask_restx import Api
+
 from api.v1.inference.app import inference_ns
 
 app = Flask(__name__)

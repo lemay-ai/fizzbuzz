@@ -1,3 +1,7 @@
 .idea/
 .ipynb_checkpoints/
 v1/inference/__pycache__/
+__pycache__/
+api/__pycache__/
+api/v1/__pycache__/
+api/v1/inference/__pycache__/

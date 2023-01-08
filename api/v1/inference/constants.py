@@ -1,4 +1,12 @@
+"""
+File to store all constants for our application
+"""
+
+
 class Constants:
+    """
+    Constants file to store inference related constants
+    """
     ASR_INFERENCE_ENDPOINT = "https://api-inference.huggingface.co/models/facebook/wav2vec2-large-960h-lv60-self"
     DATA_FOLDER = "data/"
     DEFAULT_INFERENCE_FILE_NAME = "84-121550-0000.flac"

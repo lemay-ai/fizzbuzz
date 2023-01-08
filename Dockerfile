@@ -15,4 +15,5 @@ WORKDIR ..
 EXPOSE 5000
 RUN chmod -R 777 ./gunicorn.sh
 
-ENTRYPOINT ["./gunicorn.sh"]
+ENTRYPOINT ["sh", "gunicorn.sh"]
+
