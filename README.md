@@ -52,7 +52,8 @@ That's it !
 Automatic Speech Recognition is one of my recent interests and I have been trying 
 some experimentations of my own in this domain. Hence, I wanted to engineer a bit around it too.
 We can add RabbitMQ as a dependent service and put/process files from/to queue to
-parallelize further.
+parallelize further. I am comfortable designing an in-house message queue for this application, as well as
+across the organization too, using underlying concurrent datastructures, lock-free, lock-based both.
 
 I also noticed that Lemay.ai has highlighted a ASR (Voice Recognition) project in their portfolio
 brochure. Theres that as well. 
