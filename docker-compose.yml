@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.1"
 
 services:
   app:
@@ -7,10 +7,14 @@ services:
       dockerfile: ./api/Dockerfile
       args:
         - SRC_PATH=api
+    expose:
+      - "5000"
   nginx:
     container_name: nginx
-    build: nginx
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
     ports:
-      - 8080:80
+      - "9000:80"
     depends_on:
       - app
