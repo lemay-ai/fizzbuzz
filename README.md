@@ -12,6 +12,10 @@
 ``
 3) Goto : ``localhost:9000``
 
+![sample1](https://github.com/projects-g/fizzbuzz/blob/dev/sample1.png)
+
+![sample2](https://github.com/projects-g/fizzbuzz/blob/dev/sample2.png)
+
 You should be able to see the application on this port
 
 [If you are running on a non-linux machine, you may face issues while running nginx.
