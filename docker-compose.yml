@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+      args:
+        - SRC_PATH=api
+  nginx:
+    container_name: nginx
+    build: nginx
+    ports:
+      - 81:81
+    depends_on:
+      - app

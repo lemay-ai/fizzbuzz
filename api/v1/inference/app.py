@@ -44,7 +44,7 @@ class Inference(Resource):
             conf.read(env_file_ini)
             BEARER_TOKEN = conf.get(section="ALL", option="BEARER_TOKEN")
             headers = {"Authorization": "Bearer {}".format(BEARER_TOKEN)}
-            with open(os.getcwd() + file_name, "rb") as f:
+            with open("api/" + file_name, "rb") as f:
                 f.seek(0)
                 data = f.read()
             response = requests.request("POST", API_URL, headers=headers, data=data)

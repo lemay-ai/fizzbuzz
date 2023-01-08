@@ -10,7 +10,7 @@ WORKDIR /api
 RUN python -m pip install pip==21.0.1
 RUN pip install -r requirements.txt
 
-WORKDIR ..
+#WORKDIR ..
 
 EXPOSE 5000
 RUN chmod -R 777 ./gunicorn.sh
