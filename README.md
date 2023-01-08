@@ -28,7 +28,7 @@ command from above,
 
 You should see a SWAGGER UI to interact with the application like below :
 
-![https://github.com/projects-g/fizzbuzz/blob/dev/img.png](img.png)
+![swagger](https://github.com/projects-g/fizzbuzz/blob/dev/img.png)
 
 
 You dont need an UI layer here as SWAGGER UI is intuitive and easy to work with.
