@@ -1,6 +1,6 @@
 from flask import Flask, Blueprint
 from flask_restx import Api
-from v1.inference.app import inference_ns
+from api.v1.inference.app import inference_ns
 
 app = Flask(__name__)
 bp = Blueprint('api', __name__)
