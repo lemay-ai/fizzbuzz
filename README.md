@@ -40,7 +40,7 @@ You dont need an UI layer here as SWAGGER UI is intuitive and easy to work with.
 
 Click on "Try it out".
 
-Give the filename as "84-121550-0000.flac". 
+Give the filename as ``84-121550-0000.flac``. 
 
 This is a sample file I have uploaded to do inference against. 
 Ideally, you give a filename and we fetch it from cloud storage. Keeping an upload option is easy too, but 
@@ -48,6 +48,8 @@ cloud storage enables to get a folder name and perform inference on all files si
 Hence I have kept it this way.
 
 You should be able to extract the text from the speech in the audio file.
+
+NOTE: There is no separate notebook to run the inference and SWAGGER UI takes it place.
 
 
 ![sample3](https://github.com/projects-g/fizzbuzz/blob/dev/image3.png)
@@ -64,4 +66,6 @@ across the organization too, using underlying concurrent datastructures, lock-fr
 
 I also noticed that Lemay.ai has highlighted a ASR (Voice Recognition) project in their portfolio
 brochure. Theres that as well. 
+
+# The EDA task's notebook is in the notebooks folder.
 
