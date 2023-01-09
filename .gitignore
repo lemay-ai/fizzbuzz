@@ -5,3 +5,5 @@ __pycache__/
 api/__pycache__/
 api/v1/__pycache__/
 api/v1/inference/__pycache__/
+.DS_Store/
+core.ini
