@@ -36,7 +36,7 @@ class Inference(Resource):
         try:
             args = parser.parse_args()
             file_name = args["filename"]
-            file_name = "/v1/data/sample/" + file_name
+            file_name = "v1/data/sample/" + file_name
             API_URL = CONST.ASR_INFERENCE_ENDPOINT
             config_dir = os.path.dirname(os.path.realpath(__file__))
             conf = ConfigParser()
@@ -44,7 +44,7 @@ class Inference(Resource):
             conf.read(env_file_ini)
             BEARER_TOKEN = conf.get(section="ALL", option="BEARER_TOKEN")
             headers = {"Authorization": "Bearer {}".format(BEARER_TOKEN)}
-            with open("api/" + file_name, "rb") as f:
+            with open(file_name, "rb") as f:
                 f.seek(0)
                 data = f.read()
             response = requests.request("POST", API_URL, headers=headers, data=data)

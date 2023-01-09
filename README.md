@@ -45,6 +45,9 @@ Hence I have kept it this way.
 
 You should be able to extract the text from the speech in the audio file.
 
+
+![sample3](https://github.com/projects-g/fizzbuzz/blob/dev/image3.png)
+
 That's it !
 
 # Reason for choosing ASR
