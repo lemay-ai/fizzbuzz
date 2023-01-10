@@ -1,0 +1,6 @@
+gunicorn
+flask
+flask-restx
+werkzeug
+requests
+gunicorn
