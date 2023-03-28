@@ -4,9 +4,8 @@ Hello, human.
 Your goal is to demonstrate your coding skills by creating a video recording of your answers to some general knowledge questions, writing an ML API demo using Docker, python3, and a bit of magic, and showing us your exploratory data analysis skills. Please spend minimal effort on graphics and UI, as this is not a test of your UI coding skills. Just don't stress on frontend stuff.
 
 # 1) GENERAL KNOWLEDGE VIDEO DEMONSTRATION AND TECHNICAL WRITING SAMPLE
-- Please provide a writing sample. The sample can be from your past work (off-the-shelf), or you can create a new technical writing sample. The writing sample should be on a technical subject, written in English,  and should be at least one page in length.
 - Please make a video recording of your answers to the questions in the notebook: https://github.com/lemay-ai/fizzbuzz/blob/main/Interview_Questions.ipynb
-- Please send the video file and writing sample to daniel@lemay.ai and matt@lemay.ai
+- Please send the video file to daniel@lemay.ai and matt@lemay.ai
 - After you submit the video, proceed to steps 2 and 3, below.
 
 # 2) MODEL DEPLOYMENT DEMONSTRATION
